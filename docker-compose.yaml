@@ -1,0 +1,6 @@
+services:
+  obcpt:
+    build: .
+    image: obcpt
+    ports:
+      - "8080:8080"
