@@ -35,6 +35,8 @@ To remove the images run
 `http://localhost:8080/h2_console`
 
 ## Tables
-Account (Not being used yet)
-Transfer
-TransferHistory (Not being used yet)
+- Account (Not being used yet)
+
+- Transfer
+
+- TransferHistory (Not being used yet)
