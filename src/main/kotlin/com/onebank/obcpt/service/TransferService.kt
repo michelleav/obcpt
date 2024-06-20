@@ -1,7 +1,7 @@
 package com.onebank.obcpt.service
 
-import com.onebank.obcpt.dto.TransferRequest
-import com.onebank.obcpt.dto.TransferResponse
+import com.onebank.event.TransferRequest
+import com.onebank.event.TransferResponse
 import com.onebank.obcpt.repository.TransferRepository
 import org.springframework.stereotype.Service
 

@@ -1,13 +1,18 @@
 package com.onebank.obcpt.controller
 
-import com.onebank.obcpt.dto.TransferRequest
-import com.onebank.obcpt.dto.TransferResponse
+import com.onebank.event.TransferRequest
+import com.onebank.event.TransferResponse
+import com.onebank.obcpt.producer.TransferProducer
 import com.onebank.obcpt.service.TransferService
 import org.springframework.web.bind.annotation.*
-
-@RequestMapping("/obcpt/transfer")
 @RestController
-class TransferController(val transferService: TransferService) {
+@RequestMapping("/obcpt/transfer")
+class TransferController(private val transferService: TransferService,
+        private val transferProducer: TransferProducer) {
     @PostMapping
-    fun createTransfer(@RequestBody newTransferRequest: TransferRequest): TransferResponse = transferService.createTransfer(newTransferRequest)
+    fun createTransfer(@RequestBody newTransferRequest: TransferRequest): TransferResponse {
+        var response = transferService.createTransfer(newTransferRequest)
+        transferProducer.sendTransferMessage(newTransferRequest)
+        return response
+    }
 }

@@ -1,4 +1,4 @@
-package com.onebank.obcpt.dto
+package com.onebank.event
 
 class TransferResponse (var message: String) {
 }

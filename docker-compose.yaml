@@ -1,6 +1,10 @@
 services:
-  obcpt:
+ obcpt:
     build: .
     image: obcpt
     ports:
       - "8080:8080"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    environment:
+      KAFKA_BOOTSTRAP_SERVER: kafka:9092

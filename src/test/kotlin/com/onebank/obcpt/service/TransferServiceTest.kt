@@ -1,6 +1,6 @@
 package com.onebank.obcpt.service
 
-import com.onebank.obcpt.dto.TransferRequest
+import com.onebank.event.TransferRequest
 import com.onebank.obcpt.repository.TransferRepository
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.BeforeEach
